@@ -118,7 +118,7 @@ body {
 
 .main__block-info {
 	margin-top: clamp(10px, 2vw, 40px);
-	padding: 25px 30px;
+	padding: 25px 15px;
 	background-color: #171836bf;
 	border: 3px solid #6568b870;
 	border-radius: 32px;
@@ -127,7 +127,7 @@ body {
 
 .main__title {
 	display: block;
-	max-width: 315px;
+	max-width: 314px;
 	font-weight: 900;
 	margin: 0 auto;
 	font-size: clamp(18px, 3vw, 34px);
@@ -137,7 +137,7 @@ body {
 	display: block;
 	font-weight: 900;
 	color: #ffbc00;
-	font-size: clamp(25px, 4vw, 30px);
+	font-size: clamp(25px, 4vw, 33px);
 	line-height: clamp(40px, 4vw, 30px);
 	padding-top: 10px;
 	/* margin-bottom: clamp(5px, 3vw, 10px); */
