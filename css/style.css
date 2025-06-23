@@ -485,6 +485,7 @@ body {
 		max-height: 100%;
 	}
 }
+
 @media (max-width: 410px) {
 	.logo img {
 		max-width: 140px;
