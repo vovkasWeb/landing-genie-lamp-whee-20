@@ -87,7 +87,7 @@ document.addEventListener('DOMContentLoaded', function () {
 		setTimeout(() => {
 			clearInterval(lampInterval) // Останавливаем цикл
 			launchConfetti() // Запуск конфетти после загрузки скрипта
-			prizePoint.style.display = 'block'
+			// prizePoint.style.display = 'block'
 			isButtonClicked = false
 			ruletkaBtn.classList.remove('stop-pulse')
 			finish()
