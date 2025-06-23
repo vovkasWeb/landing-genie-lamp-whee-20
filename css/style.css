@@ -271,6 +271,7 @@ body {
 	display: block;
 	font-size: clamp(17px, 3vw, 24px);
 	line-height: clamp(23px, 3vw, 30px);
+	color: #ffffff;
 }
 .prize__subtitle,
 .prize-two__title,
@@ -279,6 +280,9 @@ body {
 	display: block;
 	font-size: clamp(30px, 3vw, 35px);
 	line-height: clamp(30px, 3vw, 40px);
+}
+.prize-item > .main__mincro-bonus{
+	color: #ffffff;
 }
 
 .popup {
