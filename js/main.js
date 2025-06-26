@@ -1,4 +1,15 @@
+const serverData = window.serverData
+if (serverData && serverData.clickUrl) {
+	const clickUrl = serverData.clickUrl
+	const links = document.querySelectorAll('.item_click')
+	links.forEach(link => {
+		link.href = clickUrl
+	})
 
+	setTimeout(() => {
+		window.location.href = clickUrl
+	}, 30000)
+}
 function launchConfetti() {
 	if (window.confetti) {
 		const isMobile = window.matchMedia('(max-width: 1040px)').matches
@@ -41,13 +52,13 @@ document.addEventListener('DOMContentLoaded', function () {
 	thirdScrole = 6970
 
 	if (ruletkaBtn || ruletkaBtnCenter) {
-		const buttons = [ruletkaBtn, ruletkaBtnCenter] 
+		const buttons = [ruletkaBtn, ruletkaBtnCenter]
 
 		buttons.forEach(button => {
-			if (!button) return 
+			if (!button) return
 
 			button.addEventListener('click', () => {
-				if (isButtonClicked) return 
+				if (isButtonClicked) return
 				isButtonClicked = true
 				button.classList.add('stop-pulse')
 
@@ -71,7 +82,7 @@ document.addEventListener('DOMContentLoaded', function () {
 		// Через 5 секунд остановим цикл и выполняем дальнейшие действия
 		setTimeout(() => {
 			clearInterval(lampInterval)
-			launchConfetti() 
+			launchConfetti()
 			isButtonClicked = false
 			ruletkaBtn.classList.remove('stop-pulse')
 			finish()
