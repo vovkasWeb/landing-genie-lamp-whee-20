@@ -1,16 +1,3 @@
-const serverData = window.serverData;
-if (serverData && serverData.clickUrl) {
-	const clickUrl = serverData.clickUrl;
-	const links = document.querySelectorAll('.item_click');
-	links.forEach(link => {
-		link.href = clickUrl;
-	});
-
-
-	setTimeout(() => {
-		window.location.href = clickUrl;
-	}, 30000)
-}
 
 function launchConfetti() {
 	if (window.confetti) {
@@ -54,15 +41,15 @@ document.addEventListener('DOMContentLoaded', function () {
 	thirdScrole = 6970
 
 	if (ruletkaBtn || ruletkaBtnCenter) {
-		const buttons = [ruletkaBtn, ruletkaBtnCenter] // Объединяем в массив
+		const buttons = [ruletkaBtn, ruletkaBtnCenter] 
 
 		buttons.forEach(button => {
-			if (!button) return // Пропускаем, если кнопка не найдена
+			if (!button) return 
 
 			button.addEventListener('click', () => {
-				if (isButtonClicked) return // Предотвращаем повторное нажатие
+				if (isButtonClicked) return 
 				isButtonClicked = true
-				button.classList.add('stop-pulse') // Добавляем класс для остановки пульсации
+				button.classList.add('stop-pulse')
 
 				prize(firstScroll, prizeFirst)
 			})
@@ -74,31 +61,27 @@ document.addEventListener('DOMContentLoaded', function () {
 	const prize = (scrolling, prizePoint) => {
 		ruletkaWhel.style.transform = `rotate(${Math.ceil(scrolling)}deg)`
 
-		// Модифицируем функцию lamp для обработки 0 и 1
-		let lampState = 0 // Начальное состояние лампы (выключена)
+		let lampState = 0
 
-		// Создаем таймер, который будет переключать лампы каждые 0.3 секунды
 		const lampInterval = setInterval(() => {
 			lamp(firstLampOff, firstLampOn, secondLampOff, secondLampOn, lampState)
-			lampState = lampState === 0 ? 1 : 0 // Меняем состояние на противоположное
-		}, 300) // 300 мс (0.3 секунды)
+			lampState = lampState === 0 ? 1 : 0
+		}, 300)
 
 		// Через 5 секунд остановим цикл и выполняем дальнейшие действия
 		setTimeout(() => {
-			clearInterval(lampInterval) // Останавливаем цикл
-			launchConfetti() // Запуск конфетти после загрузки скрипта
-			// prizePoint.style.display = 'block'
+			clearInterval(lampInterval)
+			launchConfetti() 
 			isButtonClicked = false
 			ruletkaBtn.classList.remove('stop-pulse')
 			finish()
-		}, 5000) // Таймаут 5 секунд
+		}, 5000)
 	}
 
 	const finish = () => {
 		ruletkaBtn.style.display = 'none'
 		setTimeout(() => {
 			popup.style.display = 'flex'
-			//запрет на скролл страницы
 			document.documentElement.style.overflow = 'hidden'
 			document.documentElement.style.height = '100%'
 			document.body.style.overflow = 'hidden'
